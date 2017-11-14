@@ -1,5 +1,3 @@
-#KERNEL_SRC = /home/takashi/ax335x_work/KERNEL
-#KERNEL_SRC = /home/taiki/Desktop/kernel/linux-dev2/linux-dev/KERNEL
 KERNEL_SRC = /home/taiki/export/kernel/kernel
 BUILD_DIR := $(shell pwd)
 

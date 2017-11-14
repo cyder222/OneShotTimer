@@ -1,2 +1,13 @@
 # OneShotTimer
 このプロジェクトは、BeagleBoneBlackにおいて、ns精度のワンショットパルスを発生させるC++ または Cで使えるインターフェースを提供するプロジェクトです。
+7つのタイマーピンのうち、未使用のものであればどこからでも発生させることが可能です。
+##手順
+###コンパイル
+まず、armへのクロスコンパイラをインストールし、BBB用のLinux Kernelをビルドします。
+Makefile のカーネルソースのアドレスをビルドに使ったLinux Kernelに変更します。
+
+OneShotTimerのヘッダーファイルを使い、ワンショットタイマーを利用するプログラムを書きます。
+oneshot_timer_enable_timer関数で、タイマーを有効化し、
+oneshot_timer_cond_prepare関数で、発生させる準備をします。初回のみ、少し時間がかかります。
+
+このご、oneshot_timer_do_pulse関数を実行すると、prepare関数で指定した長さのパルスが発生します。
